@@ -1,9 +1,9 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visor de Mapa Gratuito con Leaflet</title>
+    <title>Visor de Mapa Gratuito con Leaflet - Incendios de Avila y Sierra Oeste</title>
 
     <!-- 1. CSS de Leaflet (Gratuito via CDN) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -56,18 +56,18 @@
     }).addTo(map);
 
     // ----------------------------- IMAGEN 2
-    const imageUrl = './S2L2Ax10_T30TUK-b3a6a70c1-20260726_TCI.png'; 
-    const imageBounds = [
+    const imageUrl2 = './S2L2Ax10_T30TUK-b3a6a70c1-20260726_TCI.png'; 
+    const imageBounds2 = [
         [40.359664, -4.372306], // Esquina Suroeste
         [40.397699, -4.322565]  // Esquina Noreste
     ];
-    const imageOverlay = L.imageOverlay(imageUrl, imageBounds, {
+    const imageOverlay2 = L.imageOverlay(imageUrl2, imageBounds2, {
         opacity: 1, // Transparencia (de 0.0 a 1.0)
         interactive: true
     }).addTo(map);
 
     // Centrar y hacer zoom automáticamente a la imagen al cargar
-    map.fitBounds(imageBounds);
+    map.fitBounds(imageBounds2);
     
 </script>
 
