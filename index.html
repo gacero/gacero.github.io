@@ -1,0 +1,62 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Mapa Gratuito con Leaflet</title>
+
+    <!-- 1. CSS de Leaflet (Gratuito via CDN) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; height: 100vh; }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- 2. JavaScript de Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    // Inicializar el mapa (coordenadas iniciales temporales)
+    const map = L.map('map').setView([40.4168, -3.7038], 6);
+
+    // Añadir mapa base gratuito de OpenStreetMap
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // --- OPCIÓN MAPA SATÉLITE GRATUITO (Descomenta estas 3 líneas si prefieres fondo satelital) ---
+    // L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    //     attribution: 'Tiles &copy; Esri'
+    // }).addTo(map);
+
+
+    // 3. RUTA DE TU IMAGEN
+    // Lo más recomendable es subir la imagen a la misma carpeta en GitHub y usar './tu_imagen.jpg'
+    //const imageUrl = './mi_imagen.jpg'; 
+
+    // 4. ENCUADRE DE LA IMAGEN
+    // Leaflet solo pide 2 esquinas: [[Latitud Sur, Longitud Oeste], [Latitud Norte, Longitud Este]]
+    /* const imageBounds = [
+        [35.8, -9.3], // Esquina inferior izquierda (Suroeste)
+        [43.8, 3.3]   // Esquina superior derecha (Noreste)
+    ];*/
+
+    // 5. Superponer la imagen en el mapa
+    /*const imageOverlay = L.imageOverlay(imageUrl, imageBounds, {
+        opacity: 0.85, // Transparencia (de 0.0 a 1.0)
+        interactive: true
+    }).addTo(map);
+
+    // Centrar y hacer zoom automáticamente a la imagen al cargar
+    map.fitBounds(imageBounds);
+    */
+</script>
+
+</body>
+</html>
