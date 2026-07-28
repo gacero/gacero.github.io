@@ -25,26 +25,28 @@
     const map = L.map('map').setView([40.4168, -3.7038], 6);
 
     // Añadir mapa base gratuito de OpenStreetMap
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    /*L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
+    */
 
     // --- OPCIÓN MAPA SATÉLITE GRATUITO (Descomenta estas 3 líneas si prefieres fondo satelital) ---
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri'
     }).addTo(map);
+    
 
 
     // 3. RUTA DE TU IMAGEN
     // Lo más recomendable es subir la imagen a la misma carpeta en GitHub y usar './tu_imagen.jpg'
-    const imageUrl = './S2L2A_T30TUK-0573e57cb-20260726_IRP.tif'; 
+    const imageUrl = './S2L2A_T30TUK-0573e57cb-20260726_IRP.png'; 
 
     // 4. ENCUADRE DE LA IMAGEN
     // Leaflet solo pide 2 esquinas: [[Latitud Sur, Longitud Oeste], [Latitud Norte, Longitud Este]]
     const imageBounds = [
-        [40.27, -4.61], // Esquina inferior izquierda (Suroeste)
-        [40.31, -4.56]   // Esquina superior derecha (Noreste)
+        [40.274300, -4.608532], // Esquina Suroeste
+        [40.312594, -4.558680]  // Esquina Noreste
     ];
 
     // 5. Superponer la imagen en el mapa
